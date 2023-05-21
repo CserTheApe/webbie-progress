@@ -1,0 +1,4 @@
+# Dependency directories
+node_modules/
+.prettierignore
+webpack.config.js

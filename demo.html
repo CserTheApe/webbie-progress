@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demos</title>
+    <style>
+      .block {
+        margin: 50px 0;
+      }
+    </style>
+  </head>
+  <style></style>
+  <body>
+    <h1 style="text-align: center">Demos</h1>
+    <div class="block">
+      <webbie-progress></webbie-progress>
+      <webbie-snippet>
+        <webbie-progress></webbie-progress>
+      </webbie-snippet>
+    </div>
+    <hr />
+    <div class="block">
+      <webbie-progress
+      size="300px"
+      image="sample.jpg"
+      percent="70"
+      ></webbie-progress>
+      <webbie-snippet>
+        <webbie-progress
+        size="300px"
+        image="sample.jpg"
+        percent="70"
+        >
+        </webbie-progress>
+      </webbie-snippet>
+    </div>
+    <hr />
+    <div class="block">
+      <webbie-progress
+      image="sample.jpg"
+      percent="40"
+      vertices="4"
+      stroke-anim-speed="900ms"></webbie-progress>
+      <webbie-snippet>
+        <webbie-progress
+        image="sample.jpg"
+        percent="40"
+        vertices="4"
+        stroke-anim-speed="900ms"></webbie-progress>
+      </webbie-snippet>
+    </div>
+    <hr />
+    <div class="block">
+      <p>Frame rotation will not work if an image is provided to the component.</p>
+      <webbie-progress
+      fill-color="#fa7534"
+      stroke-color="#239AD3"
+      vertices="3"
+      frame-anim-speed="4s"
+      text="Hi"
+      ></webbie-progress>
+      <webbie-snippet>
+        <webbie-progress
+        fill-color="#fa7534"
+        stroke-color="#239AD3"
+        vertices="3"
+        frame-anim-speed="4s"
+        text="Hi"
+        ></webbie-progress>
+      </webbie-snippet>
+    </div>
+    <hr />
+    <div class="block">
+    <webbie-progress
+      size="200px"
+      vertices="5"
+      percent="80"
+      image="sample.jpg"
+      stroke-width="4"
+      frame-width="14"
+      radius="40"
+      stroke-color="brown"
+      frame-color="transparent"
+      stroke-anim-speed="4s"
+      stroke-anim-reverse
+      stroke-shadow="blue"
+    ></webbie-progress>
+    <webbie-snippet>
+      <webbie-progress
+        size="200px"
+        vertices="5"
+        percent="80"
+        image="sample.jpg"
+        stroke-width="4"
+        frame-width="14"
+        radius="40"
+        stroke-color="brown"
+        frame-color="transparent"
+        stroke-anim-speed="4s"
+        stroke-anim-reverse
+        stroke-shadow="blue"
+      ></webbie-progress>
+    </webbie-snippet>
+  </div>
+  <hr />
+  <div class="block">
+    <p>Maximum number of vertices is 20. You shouldn't need that many anyway.</p>
+    <webbie-progress
+      vertices="10"
+      rotate="90"
+      percent="80"
+      text="100"
+      stroke-width="4"
+      frame-width="14"
+      radius="40"
+      stroke-color="purple"
+      frame-color="grey"
+      stroke-anim-speed="1s"
+      frame-anim-speed="2s"
+      fill-color="green"
+      frame-anim-reverse
+    ></webbie-progress>
+    <webbie-snippet>
+      <webbie-progress
+        vertices="10"
+        rotate="90"
+        percent="80"
+        text="100"
+        stroke-width="4"
+        frame-width="14"
+        radius="40"
+        stroke-color="purple"
+        frame-color="grey"
+        stroke-anim-speed="1s"
+        frame-anim-speed="2s"
+        fill-color="green"
+        frame-anim-reverse
+      ></webbie-progress>
+    </webbie-snippet>
+  </div>
+  <hr />
+  <div class="block">
+    <p>The 'percent' attribute can be used to show progress.
+      Click the button below to randomize the percent value and see the transition.</p>
+    <webbie-progress
+      id="testingthis"
+      size="200px"
+      vertices="5"
+      rotate="20"
+      percent="50"
+      text="water"
+      text-style="font-style: italic; stroke: #ffffaa; fill: red; font-weight: bolder"
+      image="sample.jpg"
+    ></webbie-progress>
+    <button onclick="clicker()">Click</button>
+  </div>
+    <script type="module" src="dist/webbie-progress.js"></script>
+    <script
+      type="module"
+      src="node_modules/webbie-snippet/dist/webbie-snippet.js"
+    ></script>
+    <script>
+      function clicker() {
+        let objact = document.getElementById("testingthis");
+        objact.setAttribute("percent", (Math.random() * 100).toString());
+      }
+    </script>
+  </body>
+</html>
