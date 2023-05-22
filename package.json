@@ -1,6 +1,6 @@
 {
   "name": "webbie-progress",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A web component to create progress and loading indicators and simple avatar frames",
   "main": "dist/webbie-progress.js",
   "scripts": {
