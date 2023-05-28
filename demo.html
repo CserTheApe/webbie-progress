@@ -143,7 +143,8 @@
   <hr />
   <div class="block">
     <p>The 'percent' attribute can be used to show progress.
-      Click the button below to randomize the percent value and see the transition.</p>
+      Click the buttons below to randomize the percent value and see the transition
+      , or change the stroke color to green and see the attribute change re-render.</p>
     <webbie-progress
       id="testingthis"
       size="200px"
@@ -154,7 +155,20 @@
       text-style="font-style: italic; stroke: #ffffaa; fill: red; font-weight: bolder"
       image="sample.jpg"
     ></webbie-progress>
-    <button onclick="clicker()">Click</button>
+    <button onclick="clicker()">Randomize percent</button>
+    <button onclick="clacker()">Stroke to green</button>
+    <webbie-snippet>
+      <webbie-progress
+        id="testingthis"
+        size="200px"
+        vertices="5"
+        rotate="20"
+        percent="50"
+        text="water"
+        text-style="font-style: italic; stroke: #ffffaa; fill: red; font-weight: bolder"
+        image="sample.jpg"
+      ></webbie-progress>
+    </webbie-snippet>
   </div>
     <script type="module" src="dist/webbie-progress.js"></script>
     <script
@@ -165,6 +179,11 @@
       function clicker() {
         let objact = document.getElementById("testingthis");
         objact.setAttribute("percent", (Math.random() * 100).toString());
+      }
+      
+      function clacker() {
+        let objact = document.getElementById("testingthis");
+        objact.setAttribute("stroke-color", "#00ff00");
       }
     </script>
   </body>

@@ -10,12 +10,37 @@ export default class WebbieProgress extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ["percent"];
+    return [
+      "percent",
+      "vertices",
+      "rotate",
+      "size",
+      "text",
+      "text-style",
+      "image",
+      "radius",
+      "stroke-width",
+      "frame-width",
+      "stroke-color",
+      "frame-color",
+      "fill-color",
+      "stroke-shadow",
+      "stroke-anim-speed",
+      "frame-anim-speed",
+      "stroke-anim-reverse",
+      "frame-anim-reverse",
+      "stroke-style",
+      "frame-style",
+    ];
   }
 
-  attributeChangedCallback(_name, _oldValue, newValue) {
-    let strokePath = this.shadowRoot.getElementById("strokepath");
-    strokePath.style.strokeDasharray = `${newValue} ${100 - newValue}`;
+  attributeChangedCallback(name, _oldValue, newValue) {
+    if (name === "percent") {
+      let strokePath = this.shadowRoot.getElementById("strokepath");
+      strokePath.style.strokeDasharray = `${newValue} ${100 - newValue}`;
+    } else {
+      this.render();
+    }
   }
 
   render() {
