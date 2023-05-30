@@ -1,6 +1,6 @@
 {
   "name": "webbie-progress",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A web component to create progress and loading indicators and simple avatar frames",
   "main": "dist/webbie-progress.js",
   "scripts": {
@@ -25,7 +25,7 @@
   "author": "CserTheApe",
   "license": "MIT",
   "devDependencies": {
-    "webbie-snippet": "^1.0.3",
+    "webbie-snippet": "^1.0.4",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.1.1"
   }

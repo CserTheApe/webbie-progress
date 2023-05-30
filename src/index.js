@@ -77,7 +77,7 @@ export default class WebbieProgress extends HTMLElement {
       },
       css: {
         rotate: rotate ? this.numerify(rotate, 360) : 0,
-        percent: percent ? this.numerify(percent, 100) : 100,
+        percent: percent ? this.numerify(percent, 100, 0.001) : 100,
         textStyle,
         strokeColor,
         frameColor,
@@ -94,8 +94,8 @@ export default class WebbieProgress extends HTMLElement {
     });
   }
 
-  numerify(value, max) {
-    return Math.max(Math.min(value, max), 0);
+  numerify(value, max, min) {
+    return Math.max(Math.min(value, max), min || 0);
   }
 }
 
